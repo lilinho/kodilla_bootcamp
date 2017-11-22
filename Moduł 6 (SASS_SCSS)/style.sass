@@ -1,0 +1,563 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,400i,700,900')
+
+$font: 'Raleway', sans-serif
+$per_maxwidth: 100%
+$img_header: url("https://images.pexels.com/photos/7100/iphone-desk-laptop-notebook.jpg?w=1260&h=750&auto=compress&cs=tinysrgb")
+$img_info: url("https://images.pexels.com/photos/34088/pexels-photo.jpg?w=940&h=650&auto=compress&cs=tinysrgb")
+$dark_grey: #333
+$white: #fff
+$dark_turquise: #00c7e8
+$white-but-darker: #fefefe
+
+=bolded($val)
+  font-weight: $val
+  
+=border-rad($radius)
+  border-radius: $radius
+  -moz-border-radius: $radius
+  -webkit-border-radius: $radius
+  
+=img-display($disp, $h, $w, $obj-fit: cover)
+  display: $disp
+  object-fit: $obj-fit
+  height: $h
+  width: $w
+  
+=h2-style($fontsize, $transform: none)
+  font-size: $fontsize
+  text-transform: $transform
+  
+=layer-display($position, $bg, $h, $w, $top, $left, $opacity, $transition)
+  position: $position
+  background: $bg
+  height: $h
+  width: $w
+  top: $top
+  left: $left
+  opacity: $opacity
+  transition: $transition
+
+=bg-image($h, $img, $size, $pos, $rep)
+  height: $h
+  background-image: $img
+  background-size: $size
+  background-position: $pos
+  background-repeat: $rep
+  
+=p-style($fontsize, $lineh: null, $padding-t: null, $padding-r: null, $padding-b: null, $padding-l: null, $color: null)
+  font-size: $fontsize
+  line-height: $lineh
+  padding-top: $padding-t
+  padding-right: $padding-r
+  padding-bottom: $padding-b
+  padding-left: $padding-l
+  color: $color
+    
+  
+* 
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+
+.container 
+  max-width: 1200px
+  margin: 0 auto
+
+body 
+  font-family: $font
+  
+/* GRID */
+
+.col
+  float: left
+  min-height: 1px
+  box-sizing: border-box
+  padding: 20px
+  
+.row::after, .row::before 
+  content: ""
+  clear: both
+  display: table
+  
+@for $i from 1 through 12
+  .col-#{$i}
+    width: $per_maxwidth / 12 * $i
+    @extend .col
+    
+/* HEADER */
+
+header 
+  height: 80px
+  background: $dark_grey
+  .logo 
+    height: 30px
+    width: auto
+    margin: 25px
+  nav 
+    float: right
+    ul 
+      list-style-type: none
+      li
+        display: inline-block
+        a 
+          display: block
+          text-align: center
+          color: $white
+          text-decoration: none
+          height: 80px
+          line-height: 80px
+          width: 100px
+          font-weight: 700
+          a:hover 
+            color: #04c1de
+
+/* JUMBOTRON */
+
+.jumbotron 
+  +bg-image(420px, $img_header, cover, center, no-repeat)
+  text-align: right
+  .slogan 
+    display: inline-block
+    text-align: left
+    width: 550px
+    background: rgba(0,0,0,0.7)
+    color: $white
+    font-size: 25px
+    line-height: 1.5em
+    padding: 40px
+    margin-top: 100px
+    .bolded 
+      +bolded(900)
+      
+/* ICONS */
+
+.icons 
+  text-align: center
+  padding: 60px
+  .fa
+    +border-rad(20%)
+    font-size: 50px
+    color: $white
+    padding: 30px
+    &-search, &-cogs 
+      background-color: $dark_grey
+    &-laptop 
+      background-color: $dark_turquise
+  h2 
+    +h2-style(15px, uppercase)
+    padding-top: 35px
+    padding-bottom: 15px
+  .blue 
+    color: $dark_turquise
+  .dark 
+    color: $dark_grey
+  p 
+    +p-style(14px, $lineh: 21px, $padding-t: 0, $padding-r: 60px, $padding-b: 0, $padding-l: 60px)
+
+/* JUMBOTRON GALLERY */
+
+.jumbotron-gallery
+  .jumb-header 
+    text-align: center
+    margin: 25px
+    h2
+      +h2-style(30px, uppercase)
+      text-align: center
+      padding-bottom: 20px
+      color: $dark_grey
+    p 
+      +p-style(15px, $lineh: 18px, $color: #909090)
+  [class*="col-"] 
+    padding: 0
+    position: relative
+  img
+    +img-display(block, 180px, 100%)
+  .layer
+    +layer-display(absolute, rgba(0,0,0,0.7), 100%, 100%, 0px, 0px, 0, opacity .3s)
+    &:hover
+      opacity: 1.0
+  .fa 
+    position: absolute
+    background-color: $white
+    color: #000
+    font-size: 12px
+    padding: 5px
+    border-radius: 15%
+    top: 46%
+    cursor: pointer
+  .fa-link
+    left: 30%
+  .fa-search 
+    right: 30%
+    
+/* COWORKERS */
+
+.coworkers 
+  padding: 70px
+  .worker 
+    width: 200px
+    height: 200px
+    position: relative
+  img
+    +img-display(block, 200px, 200px)
+    +border-rad(50%)
+  .layer
+    +layer-display(absolute, rgba(0,0,0,0.7), 200px, 200px, 0, 0, 0, opacity .3s)
+    +border-rad(50%)
+    &:hover
+      opacity: 1.0
+    p 
+      +p-style(20px, $color: $white)
+      height: 100%
+      width: 100%
+      text-align: center
+      +bolded(700)
+      margin-top: 100px
+  [class*="col-"]
+    .name 
+      padding: 20px
+      font-size: 25px
+      color: #606060
+      width: 200px
+      text-align: center
+      font-weight: 700
+
+/* INFO */
+
+.info
+  +bg-image(400px, (linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), $img_info), cover, center, no-repeat)
+  margin: 70px 0
+  img
+    +img-display(initial, 300px, auto, initial)
+    position: relative
+    margin-top: 50px
+  .col-5
+    padding: 0
+  .col-7
+    padding-left: 40px
+  h2
+    +h2-style(40px, uppercase)
+    +bolded(900)
+    color: $white
+    text-align: left
+    padding: 20px
+  p 
+    +p-style(20px, $color: $white)
+  .italic 
+    font-style: italic
+
+/* STATISTICS */
+
+.stats 
+  margin-top: 40px
+  margin-bottom: 40px
+  [class*="col-"] 
+    padding: 40px
+    text-align: center
+  h2
+    +h2-style(75px, none)
+    +bolded(900)
+    color: #323433
+  p
+    text-transform: uppercase
+    +bolded(900)
+    +p-style(25px, $padding-t: 10px, $padding-r: 10px, $padding-b: 10px, $padding-l: 10px, $color: $dark_turquise)
+    
+
+/* FOOTER */
+
+.footer 
+  height: 450px
+  background-color: $dark_grey
+  .titles, .values
+    padding: 0
+  h2 
+    +h2-style(32px, uppercase)
+    color: $white-but-darker
+    padding: 20px 0
+    &:after 
+      background: transparent
+      content: ""
+      display: inline-block
+      border-bottom: 2px solid
+      vertical-align: middle
+      width: 100px
+      margin-left: 1em
+  p 
+    +p-style(20px, $color: $white-but-darker)
+    margin: 15px 0
+  .bold 
+    +bolded(700)
+
+
+.footer .fa 
+  color: $white
+  background-color: $dark_turquise
+  font-size: 18px
+  height: 35px
+  width: 40px
+  padding-top: 10px
+  text-align: center
+
+
+/* COPYRIGHTS */
+
+footer 
+  height: 60px
+  font-size: 20px
+  background-color: #252726
+  color: $white-but-darker
+  text-align: center
+  padding: 20px
+  
+/* RWD FOR TABLETS */
+@media (max-width: 1000px) 
+  @for $i from 1 through 12
+    .col-m-#{$i}
+      width: $per_maxwidth / 12 * $i
+  
+  /* HEADER */
+  header
+    nav 
+      ul 
+        li 
+          a 
+            width: 80px
+            
+  /* JUMBOTRON GALLERY */
+
+  .jumbotron-gallery 
+    .layer 
+      margin-top: 140px
+      height: 40px
+      opacity: 0.4
+      &:hover
+        opacity: 0.4
+    .fa
+      top: 25%
+      
+  /* COWORKERS */
+   
+  .coworkers 
+    padding: 40px
+    .worker 
+      width: 150px
+      height: 150px
+    img 
+      height: 150px
+      width: 150px
+    .layer 
+      width: 150px
+      height: 150px
+      background-color: rgba(0,0,0,0.3)
+      opacity: 1.0
+      &:hover
+        opacity: 1.0
+      p 
+        font-size: 18px
+        margin-top: 90px
+    [class*="col-"] 
+      .name 
+        padding: auto
+        font-size: 25px
+        color: #606060
+        width: 200px
+        text-align: center
+        font-weight: 700
+        
+  /* INFO */
+
+  .info 
+    .col-7 
+      margin-left: 40px
+    img 
+      display: none
+    p 
+      font-size: 18px
+  
+
+  /* STATISTICS */
+
+  .stats 
+    [class*="col-"] 
+      padding: 40px 0
+      text-align: center
+    h2 
+      +h2-style(65px, none)
+    p 
+      padding: 10px
+      font-size: 20px
+      color: $dark_turquise
+      font-weight: 900
+      text-transform: uppercase
+  
+  /* FOOTER */
+  
+  .footer 
+    height: 400px
+    [class*="col-"] 
+      padding: 10px
+    h2
+      +h2-style(20px, uppercase)
+      color: $white-but-darker
+      padding: 20px 0
+      &:after
+        background: transparent
+        content: ""
+        display: inline-block
+        border-bottom: 2px solid
+        vertical-align: middle
+        width: 20%
+        margin-left: 1em
+    p 
+      font-size: 16px
+      color: $white-but-darker  
+      margin: 10px 0
+    .titles 
+      display: none
+    .bold
+      +bolded(700)
+    .fa 
+      color: $white
+      background-color: $dark_turquise
+      font-size: 15px
+      height: 25px
+      width: 30px
+      padding-top: 5px
+      text-align: center
+      
+@media (max-width: 768px) 
+  @for $i from 1 through 12
+    .col-s-#{$i}
+      width: $per_maxwidth / 12 * $i
+  
+  /* HEADER */  
+  
+  header 
+    height: auto
+    background: $dark_grey
+    .logo 
+      width: 100%
+      height: auto
+      padding: 0 5px
+      margin: 25px 0
+    nav 
+      float: none
+      ul 
+        li 
+          display: block
+          a 
+            height: 40px
+            line-height: 40px
+            width: 100%
+  
+  /* JUMBOTRON */
+
+  .jumbotron .slogan 
+    width: 100%
+  
+
+  /* ICONS */
+
+  .icons 
+    padding: 40px
+    .fa 
+      font-size: 30px
+      padding: 20px
+    h2 
+      padding-top: 20px
+    p 
+      line-height: 18px
+      padding: 0
+  
+  
+  /* JUMBOTRON GALLERY */
+
+  .jumbotron-gallery 
+    .col-3 
+      display: none
+    .jumb-header 
+      margin: 20px 0
+      h2 
+        font-size: 25px
+      p 
+        font-size: 12px
+        line-height: 18px
+    .layer 
+      height: 40px
+      opacity: 1.0
+      transition: none
+      &:hover
+        opacity: 1.0
+    .fa 
+      top: 25%
+      
+  /* COWORKERS */
+
+  .coworkers 
+    padding: 20px 0
+    .worker 
+      width: 180px
+      height: 180px
+      margin: 20px auto
+    img 
+      height: 180px
+      width: 180px
+    .layer 
+      width: 180px
+      height: 180px
+      background-color: rgba(0,0,0,0.3)
+      opacity: 1.0
+      transition: none
+      &:hover
+        opacity: 1.0
+      p 
+        font-size: 18px
+        margin-top: 120px
+        opacity: 1.0
+    [class*="col-"] 
+      .name 
+        width: 100%
+        padding: 20px
+        font-size: 18px
+        
+  /* INFO */
+
+  .info .col-7 
+    margin-left: 0
+    [class*="col-"] 
+      padding: 5px
+    img 
+      display: none
+    h2 
+      font-size: 22px
+    p 
+      font-size: 16px
+  
+  /* STATISTICS */
+
+  .stats 
+    [class*="col-"] 
+      padding: 40px 0
+      text-align: center
+    h2 
+      font-size: 55px
+    p 
+      padding: 10px
+      font-size: 20px
+      color: $dark_turquise
+      font-weight: 900
+      text-transform: uppercase
+  
+  /* FOOTER */
+
+  .footer 
+    height: 700px
+    [class*="col-s-"]
+      text-align: center
+  
+  /* COPYRIGHTS */
+
+  footer 
+    text-align: center
+    font-size: 1em
