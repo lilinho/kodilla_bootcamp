@@ -1,0 +1,40 @@
+body {
+	position: relative;
+}
+
+header {
+	background-color: #fff!important;
+}
+
+.bg-light {
+	background-color: inherit!important;
+}
+.head {
+	padding: 20px 0;
+}
+
+.navbar {
+	text-align: center;
+	
+}
+
+.btn-outline-success {
+    color: #9FD2E0;
+    border-color: #9FD2E0;
+}
+
+.btn-outline-success:hover {
+    background-color: #9FD2E0;
+    border-color: #9FD2E0;
+}
+
+
+.gallery {
+	background-image: url(https://images.pexels.com/photos/317372/pexels-photo-317372.jpeg?h=350&auto=compress&cs=tinysrgb);
+	background-size: 100%;
+	background-repeat: no-repeat;
+}
+
+.media-group {
+	padding: 20px 0;	
+}
