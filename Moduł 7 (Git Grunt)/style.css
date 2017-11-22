@@ -1,0 +1,91 @@
+body {
+  padding: 0 0 10px 0; }
+
+/* HEADER */
+header {
+  background-color: #fff; }
+
+.bg-light {
+  background-color: inherit !important; }
+
+/* CAROUSEL */
+.carousel {
+  height: 400px; }
+  .carousel-section {
+    padding: 20px 0; }
+  .carousel-inner {
+    height: 100%; }
+  .carousel-item {
+    height: 100%; }
+  .carousel-indicators li {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%; }
+  .carousel [class*="item-"] {
+    content: "";
+    -webkit-background-size: cover;
+    background-size: cover; }
+
+.item-1 {
+  background-image: url("https://images.pexels.com/photos/270360/pexels-photo-270360.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); }
+
+.item-2 {
+  background-image: url("https://images.pexels.com/photos/79290/black-and-white-code-programming-tech-79290.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); }
+
+.item-3 {
+  background-image: url("https://images.pexels.com/photos/360591/pexels-photo-360591.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); }
+
+.item-4 {
+  background-image: url("https://images.pexels.com/photos/374563/pexels-photo-374563.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); }
+
+.item-5 {
+  background-image: url("https://images.pexels.com/photos/330771/pexels-photo-330771.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"); }
+
+[class*="carousel-control-"] {
+  opacity: .2; }
+
+/* TABS */
+.tabs {
+  height: 300px;
+  width: 60%; }
+  .tabs .fa {
+    font-size: 8px; }
+
+/* MODAL / SOCIAL */
+.social {
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 50px; }
+  .social a {
+    color: inherit; }
+  .social .facebook {
+    color: #3B5998; }
+    .social .facebook:hover {
+      background-color: #3B5998;
+      color: #fff; }
+  .social .instagram {
+    color: #5C3D2E; }
+    .social .instagram:hover {
+      background-color: #5C3D2E;
+      color: #fff; }
+  .social .github {
+    color: #4183C4; }
+    .social .github:hover {
+      background-color: #4183C4;
+      color: #fff; }
+
+.icon-btn {
+  width: 75px;
+  height: 75px;
+  border: 0;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  font-size: 40px;
+  margin: 10px;
+  transition: all .2s ease-in-out; }
+  .icon-btn:hover {
+    transform: scale(1.1); }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html lang="pl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Bootstrap Part Two</title>
+</head>
+
+<body>
+    <!-- HEADER -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+          <img src="http://placehold.it/400x80" width="400" height="80" alt="logo">
+        </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home
+              </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#carousel-section">Karuzela</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">Ja i moje prace</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">Napisy końcowe</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- CAROUSEL -->
+    <section class="carousel-section" id="carousel-section">
+        <div id="imgCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#imgCarousel" data-slide-to="0" class="active"></li>
+                <li data-target="#imgCarousel" data-slide-to="1"></li>
+                <li data-target="#imgCarousel" data-slide-to="2"></li>
+                <li data-target="#imgCarousel" data-slide-to="3"></li>
+                <li data-target="#imgCarousel" data-slide-to="4"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item item-1 active"> </div>
+                <div class="carousel-item item-2"></div>
+                <div class="carousel-item item-3"></div>
+                <div class="carousel-item item-4"></div>
+                <div class="carousel-item item-5"></div>
+            </div>
+            <a class="carousel-control-prev" href="#imgCarousel" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+            <a class="carousel-control-next" href="#imgCarousel" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+        </div>
+    </section>
+
+    <!-- TABS -->
+    <section id="about">
+        <div class="container tabs">
+            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                    <a class="nav-link active" id="about-me-tab" data-toggle="tab" href="#about-me" role="tab" aria-controls="home" aria-expanded="true">O mnie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile">Projekty w trakcie</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Projekty
+    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" id="rpn-calc-tab" href="#rpn-calc" role="tab" data-toggle="tab" aria-controls="rpn-calc">Kalkulator RPN</a>
+                        <a class="dropdown-item" id="enigma-tab" href="#enigma" role="tab" data-toggle="tab" aria-controls="enigma">Enigma</a>
+                        <a class="dropdown-item" id="text-editor-tab" href="#text-editor" role="tab" data-toggle="tab" aria-controls="text-editor">Edytor tekstu</a>
+                    </div>
+                </li>
+            </ul>
+            <div class="tab-content" id="myTabContent">
+                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <p>
+                        O mnie? Jeśli chcecie o mnie przeczytać - wejdźcie <a href="https://libraryofbabel.info/" target="_blank">tu <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>. Jak dobrze poszukacie - znajdziecie każdy mój możliwy życiorys. I wasz również. :)
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                    <p>
+                        Zainteresowało mnie prawo Zipfa (bardzo fajnie wyjaśnione przez VSauce na <a href="https://www.youtube.com/watch?v=fCn8zs912OE" target="_blank">YouTube <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>). Dlatego jestem w trakcie pisania małego programiku, który będzie zliczał słowa w podanym pliku i generował wykres. Jak na ten moment, z powodu braku czasu, prace zostały wstrzymane. But soon... :)
+                    </p>
+                </div>
+
+                <div class="tab-pane fade" id="rpn-calc" role="tabpanel" aria-labelledby="rpn-calc-tab">
+                    <p>Kalkulator RPN napisany w Pythonie. Drugi większy projekt, za który się wziąłem. Jest to aplikacja okienkowa, moim zdaniem dość intuicyjna. Link do repo i artykułu wyjaśniającego czym jest RPN (Odwrotna Notacja Polska) poniżej.</p>
+                    <p>
+                        <a href="https://pl.wikipedia.org/wiki/Odwrotna_notacja_polska" target="_blank">Wiki <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a><br>
+                        <a href="https://github.com/lilinho/rpn_calc" target="_blank">GitHub <sup><i class="fa fa-external-link" aria-hidden="true"></i></sup></a>
+                    </p>
+                </div>
+
+                <div class="tab-pane fade" id="enigma" role="tabpanel" aria-labelledby="enigma-tab">
+                    <p>Projekt, z którego jestem najbardziej dumny. Jeśli chodzi o sam kod to napisanie tego programu nie było trudne. Trudne było zrozumienie zasady działania szyfru Enigmy. Program jest napisany dla wersji z 5 bębnami, plugboardem i inwertorem. Planuję przerobić go na program okienkowy. Przydatne linki poniżej.</p>
+                    <p>
+                        <a href="http://enigmaco.de/enigma/enigma.html" target="_blank">Koder/dekoder Enigmy online<i class="fa fa-external-link" aria-hidden="true"></i></a><br>
+                        <a href="http://users.telenet.be/d.rijmenants/en/enigmatech.htm">Budowa i działanie Enigmy (eng) <i class="fa fa-external-link" aria-hidden="true"></i></a><br>
+                        <a href="https://en.wikipedia.org/wiki/Enigma_rotor_details" target="_blank">Wiki (eng) <i class="fa fa-external-link" aria-hidden="true"></i></a><br>
+                        <a href="https://github.com/lilinho/enigma">GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="text-editor" role="tabpanel" aria-labelledby="text-editor-tab">
+                    <p>Edytor tekstu, który, w zamierzeniu, ma przypominać Windowsowy Notatnik. Uwzględniłem podstawowe funkcjonalności jak pytanie o zapis przy wyjściu, "Zapisz", "Zapisz jako", zawijanie wierszy i inne.</p>
+                    <p>
+
+                        <a href="https://github.com/lilinho/text_editor">GitHub <i class="fa fa-external-link" aria-hidden="true"></i></a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="modal-section" id="contact">
+        <div class="container text-center">
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#contactModal">Yet another click-bait
+</button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="contactModal" tabindex="-1" role="dialog" aria-labelledby="contactModal" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="contactModal">Napisy końcowe</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+                        </div>
+                        <div class="modal-body social">
+                            <p>Strona, jak widać, ma predyspocyzje do mojego portfolio/strony wizytowej. Czeka mnie sporo poprawek, ale zamysł już w głowie jest. A znajdziesz mnie na:</p>
+                            <button class="icon-btn facebook">
+                                <a href="https://web.facebook.com/pawelec.tomasz" target="_blank"><i class="fa fa-facebook"></i></a>
+	  </button>
+
+                            <button class="icon-btn instagram">
+                                <a href="https://instagram.com/t.pawelec" target="_blank"><i class="fa fa-instagram"></i></a>
+	  </button>
+                            <button class="icon-btn github">
+                                <a href="https://github.com/lilinho" target="_blank"><i class="fa fa-github"></i></a>
+	  </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- JAVASCRIPT -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+    <script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 3000
+        })
+
+    </script>
+</body>
+</html>
